@@ -33,6 +33,7 @@ void update()
 void draw()
 {
     // TODO
+    game_frame++;
 
     draw_level();
     draw_paddle();

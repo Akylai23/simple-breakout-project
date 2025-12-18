@@ -36,7 +36,6 @@ Vector2 shift_to_center;
 Vector2 victory_balls_pos[victory_balls_count];
 Vector2 victory_balls_vel[victory_balls_count];
 
-size_t game_frame = 0;
 
 void draw_image(const Texture2D& image, const float x, const float y, const float width, const float height)
 {
@@ -52,6 +51,7 @@ void draw_image(const Texture2D& image, const float x, const float y, const floa
 
 void draw_sprite(sprite& sprite, const float x, const float y, const float width, const float height)
 {
+    ++game_frame;
     draw_image(sprite.frames[sprite.frame_index], x, y, width, height);
 
     if (sprite.prev_game_frame == game_frame) {
