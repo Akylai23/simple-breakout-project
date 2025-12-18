@@ -7,7 +7,6 @@ constexpr char VOID = ' ';
 constexpr char WALL = '#';
 constexpr char BLOCKS = '@';
 constexpr char PADDLE = 'P';
-constexpr char BOUNDARY = '!';
 constexpr char BALL = '*';
 
 struct level {
