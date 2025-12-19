@@ -11,22 +11,33 @@ void update()
 {
     // TODO
 
-    if (IsKeyPressed(KEY_ESCAPE)) {
-        game_state = paused_state;
-    }
-    if (IsKeyDown(KEY_A) || IsKeyDown(KEY_LEFT)) {
-        move_paddle(-paddle_speed);
-    }
-    if (IsKeyDown(KEY_D) || IsKeyDown(KEY_RIGHT)) {
-        move_paddle(paddle_speed);
-    }
-    move_ball();
-    if (!is_ball_inside_level()) {
-        load_level();
-        PlaySound(lose_sound);
-    } else if (current_level_blocks == 0) {
-        load_level(1);
-        PlaySound(win_sound);
+    switch (game_state ) {
+    case menu_state:
+        if(IsKeyPressed((KEY_ENTER))){
+            game_state=in_game_state;
+        }
+        break;
+    case in_game_state:
+
+        if (IsKeyPressed(KEY_ESCAPE)) {
+            game_state = paused_state;
+        }
+        if (IsKeyDown(KEY_A) || IsKeyDown(KEY_LEFT)) {
+            move_paddle(-paddle_speed);
+        }
+        if (IsKeyDown(KEY_D) || IsKeyDown(KEY_RIGHT)) {
+            move_paddle(paddle_speed);
+        }
+        move_ball();
+        if (!is_ball_inside_level()) {
+            load_level();
+            PlaySound(lose_sound);
+        } else if (current_level_blocks == 0) {
+            load_level(1);
+            PlaySound(win_sound);
+        }
+
+    
     }
 }
 
@@ -35,10 +46,21 @@ void draw()
     // TODO
     game_frame++;
 
-    draw_level();
-    draw_paddle();
-    draw_ball();
-    draw_ui();
+    switch (game_state){
+    case menu_state:
+        draw_menu();
+        break;
+
+    case in_game_state:
+
+        draw_level();
+        draw_paddle();
+        draw_ball();
+        draw_ui();
+        break;
+    default:;
+
+    }
 }
 
 int main()
