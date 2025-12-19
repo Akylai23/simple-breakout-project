@@ -257,4 +257,44 @@ void draw_victory_menu()
         &menu_font
     };
     draw_text(victory_subtitle);
+
+
 }
+
+void draw_gameover_menu()
+{
+    ClearBackground(BLACK);
+
+    const Text title = {
+        "GAME OVER",
+        { 0.50f, 0.40f },
+        100.0f,
+        RED,
+        4.0f,
+        &menu_font
+    };
+
+    const Text restart = {
+        "Press ENTER to restart level",
+        { 0.50f, 0.52f },
+        50.0f,
+        WHITE,
+        3.0f,
+        &menu_font
+    };
+
+    const Text menu = {
+        "Press ESC to return to menu",
+        { 0.50f, 0.60f },
+        40.0f,
+        GRAY,
+        2.0f,
+        &menu_font
+    };
+
+    draw_text(title);
+    draw_text(restart);
+    draw_text(menu);
+}
+
+
