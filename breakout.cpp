@@ -41,6 +41,12 @@ void update()
         if(IsKeyPressed((KEY_ESCAPE))){
             game_state=in_game_state;
         }
+
+        break;
+    case victory_state:
+        if (IsKeyPressed((KEY_ENTER))){
+            game_state=in_game_state;
+        }
         break;
     default:;
 
@@ -68,6 +74,10 @@ void draw()
     case paused_state:
         draw_pause_menu();
         break;
+    case victory_state:
+        draw_victory_menu();
+        break;
+
     default:;
 
     }
