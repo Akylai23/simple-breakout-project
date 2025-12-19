@@ -36,6 +36,13 @@ void update()
             load_level(1);
             PlaySound(win_sound);
         }
+        break;
+    case paused_state:
+        if(IsKeyPressed((KEY_ESCAPE))){
+            game_state=in_game_state;
+        }
+        break;
+    default:;
 
     
     }
@@ -58,6 +65,9 @@ void draw()
         draw_ball();
         draw_ui();
         break;
+    case paused_state:
+        draw_pause_menu();
+        break;
     default:;
 
     }
@@ -76,7 +86,7 @@ int main()
 
     while (!WindowShouldClose()) {
         BeginDrawing();
-
+        SetExitKey(KEY_NULL); // used for pause_state
         draw();
         update();
 
