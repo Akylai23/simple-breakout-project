@@ -261,15 +261,25 @@ void draw_victory_menu()
 
 }
 
-void draw_gameover_menu()
+void draw_gameover_menu() // Game Over Menu
 {
-    ClearBackground(BLACK);
+
+    ClearBackground(SKYBLUE);
 
     const Text title = {
-        "GAME OVER",
+        "GAME OVER!",
         { 0.50f, 0.40f },
-        100.0f,
-        RED,
+        150.0f,
+        BLACK,
+        4.0f,
+        &menu_font
+    };
+
+    const Text title2 = {
+        "GAME OVER!",
+        { 0.50f, 0.40f },
+        140.0f,
+        WHITE,
         4.0f,
         &menu_font
     };
@@ -278,8 +288,8 @@ void draw_gameover_menu()
         "Press ENTER to restart level",
         { 0.50f, 0.52f },
         50.0f,
-        WHITE,
-        3.0f,
+        ORANGE,
+        4.0f,
         &menu_font
     };
 
@@ -287,14 +297,15 @@ void draw_gameover_menu()
         "Press ESC to return to menu",
         { 0.50f, 0.60f },
         40.0f,
-        GRAY,
-        2.0f,
+        PINK,
+        4.0f,
         &menu_font
     };
 
     draw_text(title);
     draw_text(restart);
     draw_text(menu);
+    draw_text(title2);
 }
 
 

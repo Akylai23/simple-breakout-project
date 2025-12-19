@@ -38,6 +38,9 @@ void update()
             PlaySound(win_sound);
         }
         break;
+
+        // WHAT WAS ADDED.
+    
     case paused_state:
         if(IsKeyPressed((KEY_ESCAPE))){
             game_state=in_game_state;
@@ -54,8 +57,7 @@ void update()
             load_level();
             game_state=in_game_state;
         }
-        if (IsKeyPressed(KEY_ESCAPE)) {
-            // back to menu
+        if (IsKeyPressed(KEY_ESCAPE)) {   // back to menu
             current_level_index=0;
             load_level(0);
             game_state = menu_state;
