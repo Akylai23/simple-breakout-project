@@ -18,6 +18,7 @@ void load_textures()
     void_texture = LoadTexture("data/images/void.png");
     block_texture = LoadTexture("data/images/block.png");
     paddle_texture = LoadTexture("data/images/paddle.png");
+    coin_texture= LoadTexture("data/images/coin.png");
     ball_sprite = load_sprite("data/images/ball/ball", ".png", 8, true, 10);
 }
 
@@ -27,6 +28,7 @@ void unload_textures()
     UnloadTexture(void_texture);
     UnloadTexture(block_texture);
     UnloadTexture(paddle_texture);
+    UnloadTexture(coin_texture);
     unload_sprite(ball_sprite);
 }
 

@@ -139,10 +139,10 @@ void draw_ui()
     draw_text(level_counter);
 
     const Text boxes_remaining = {
-        "BLOCKS " + std::to_string(current_level_blocks),
+        "APPLES " + std::to_string(current_level_blocks),
         { 0.5f, 0.9625f },
         48.0f,
-        WHITE,
+        DARKGREEN,
         4.0f,
         &menu_font
     };
@@ -151,7 +151,7 @@ void draw_ui()
 
 void draw_level()
 {
-    ClearBackground(BLACK);
+    ClearBackground(BEIGE);
 
     for (size_t row = 0; row < current_level.rows; ++row) {
         for (size_t column = 0; column < current_level.columns; ++column) {
@@ -166,6 +166,10 @@ void draw_level()
             case BLOCKS:
                 draw_image(block_texture, texture_x_pos, texture_y_pos, cell_size);
                 break;
+            case COIN :
+                draw_image(coin_texture, texture_x_pos, texture_y_pos, cell_size);
+                break;
+
             default:;
 
             }

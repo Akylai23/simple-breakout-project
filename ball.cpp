@@ -55,6 +55,14 @@ void move_ball()
 
         temp = VOID;
         --current_level_blocks;
+    } else if (is_colliding_with_level_cell(next_ball_pos, ball_size, COIN)) {
+        char& temp = get_colliding_level_cell(next_ball_pos, ball_size, COIN);
+
+        temp = VOID;
+        // coin dissapears.
+
+        PlaySound(win_sound);
+
     } else if (is_colliding_with_paddle(next_ball_pos, ball_size)) {
         ball_vel.y = -std::abs(ball_vel.y);
     }
