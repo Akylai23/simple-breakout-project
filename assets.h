@@ -19,6 +19,9 @@ inline Sound win_sound;
 inline Sound lose_sound;
 inline Sound coin_sound;
 // new sound
+extern Music menu_music; // Menu Music
+void load_music();
+void unload_music();
 
 void load_fonts();
 void unload_fonts();
@@ -26,7 +29,10 @@ void unload_fonts();
 void load_textures();
 void unload_textures();
 
+
+
 void load_sounds();
 void unload_sounds();
+
 
 #endif // ASSETS_H

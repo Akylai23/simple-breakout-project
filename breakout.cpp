@@ -14,6 +14,7 @@ void update()
     switch (game_state ) {
     case menu_state:
         if(IsKeyPressed((KEY_ENTER))){
+            StopMusicStream(menu_music); // Main music
             game_state=in_game_state;
         }
         break;
@@ -61,6 +62,12 @@ void update()
             current_level_index=0;
             load_level(0);
             game_state = menu_state;
+
+            PlayMusicStream(menu_music);     // Back to music, back to main.
+            menu_music.looping = true;
+            SetMusicVolume(menu_music, 0.4f);
+
+
 
         }
 
@@ -114,8 +121,16 @@ int main()
     load_textures();
     load_level();
     load_sounds();
+    load_music();
+
+    // New Music to Main Screen
+    PlayMusicStream(menu_music);
+    menu_music.looping = true;
+    SetMusicVolume(menu_music, 0.4f);
+
 
     while (!WindowShouldClose()) {
+        UpdateMusicStream(menu_music);
         BeginDrawing();
         SetExitKey(KEY_NULL); // used for pause_state
         draw();
@@ -129,6 +144,7 @@ int main()
     unload_level();
     unload_textures();
     unload_fonts();
+    unload_music();
 
     return 0;
 }

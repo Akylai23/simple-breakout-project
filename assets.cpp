@@ -2,8 +2,13 @@
 
 #include "raylib.h"
 
+
+Music menu_music; // Adding music;
+
+
 void load_fonts()
 {
+    // new Font added.
     menu_font = LoadFontEx("data/fonts/orbitron.ttf", 256, nullptr, 0);
 }
 
@@ -31,6 +36,17 @@ void unload_textures()
     UnloadTexture(coin_texture);
     unload_sprite(ball_sprite);
 }
+void load_music() // music for the main menu
+
+{
+    menu_music= LoadMusicStream("data/music/perfect-beauty-191271.mp3");
+    menu_music.looping=true;
+    SetMusicVolume(menu_music, 0.4f);
+
+}
+void unload_music(){
+    UnloadMusicStream(menu_music);
+}
 
 void load_sounds()
 {
@@ -44,5 +60,7 @@ void unload_sounds()
 {
     UnloadSound(win_sound);
     UnloadSound(lose_sound);
+    UnloadSound(coin_sound);
     CloseAudioDevice();
 }
+
