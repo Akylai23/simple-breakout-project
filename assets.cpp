@@ -37,6 +37,7 @@ void load_sounds()
     InitAudioDevice();
     win_sound = LoadSound("data/sounds/win.wav");
     lose_sound = LoadSound("data/sounds/lose.wav");
+    coin_sound = LoadSound("data/sounds/coin.wav");
 }
 
 void unload_sounds()

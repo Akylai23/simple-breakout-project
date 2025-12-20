@@ -61,7 +61,7 @@ void move_ball()
         temp = VOID;
         // coin dissapears.
 
-        PlaySound(win_sound);
+        PlaySound(coin_sound);
 
     } else if (is_colliding_with_paddle(next_ball_pos, ball_size)) {
         ball_vel.y = -std::abs(ball_vel.y);
