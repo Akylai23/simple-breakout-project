@@ -167,6 +167,7 @@ void draw_level()
                 draw_image(block_texture, texture_x_pos, texture_y_pos, cell_size);
                 break;
             default:;
+
             }
         }
     }
