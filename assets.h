@@ -18,6 +18,7 @@ inline sprite ball_sprite;
 inline Sound win_sound;
 inline Sound lose_sound;
 inline Sound coin_sound;
+inline Sound apple_sound;
 // new sound
 extern Music menu_music; // Menu Music
 void load_music();

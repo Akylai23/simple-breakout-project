@@ -41,6 +41,7 @@ void move_ball()
             ball_vel.y = -ball_vel.y;
             next_ball_pos.y = std::round(next_ball_pos.y);
         }
+
     } else if (is_colliding_with_level_cell(next_ball_pos, ball_size, BLOCKS)) {
         char& temp = get_colliding_level_cell(next_ball_pos, ball_size, BLOCKS);
 
@@ -52,6 +53,8 @@ void move_ball()
             ball_vel.y = -ball_vel.y;
             next_ball_pos.y = std::round(next_ball_pos.y);
         }
+        PlaySound(apple_sound);
+        //when apple is picked up, there is a sound now.
 
         temp = VOID;
         --current_level_blocks;
