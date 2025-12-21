@@ -81,6 +81,7 @@ bool is_colliding_with_level_cell(const Vector2 pos, const Vector2 size, const c
     }
 
     return false;
+
 }
 
 char& get_colliding_level_cell(const Vector2 pos, const Vector2 size, const char look_for)

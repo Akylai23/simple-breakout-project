@@ -4,6 +4,9 @@
 inline size_t game_frame = 0;
 void derive_graphics_metrics();
 
+// for obstacles
+
+
 void draw_menu();
 void draw_ui();
 void draw_level();

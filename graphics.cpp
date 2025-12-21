@@ -6,7 +6,7 @@
 #include "paddle.h"
 
 #include "raylib.h"
-
+#include "algorithm"
 #include <cmath>
 #include <iostream>
 #include <string>
@@ -166,8 +166,12 @@ void draw_level()
             case BLOCKS:
                 draw_image(block_texture, texture_x_pos, texture_y_pos, cell_size);
                 break;
+                // NEW ELEMENTS
             case COIN :
                 draw_image(coin_texture, texture_x_pos, texture_y_pos, cell_size);
+                break;
+            case OBSTACLE:
+                draw_image(obstacle_texture, texture_x_pos, texture_y_pos, cell_size);
                 break;
 
             default:;

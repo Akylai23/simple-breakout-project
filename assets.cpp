@@ -24,6 +24,7 @@ void load_textures()
     block_texture = LoadTexture("data/images/block.png");
     paddle_texture = LoadTexture("data/images/paddle.png");
     coin_texture= LoadTexture("data/images/coin.png");
+    obstacle_texture= LoadTexture("data/images/obstacle.png");
     ball_sprite = load_sprite("data/images/ball/ball", ".png", 8, true, 10);
 }
 
@@ -33,6 +34,7 @@ void unload_textures()
     UnloadTexture(void_texture);
     UnloadTexture(block_texture);
     UnloadTexture(paddle_texture);
+    UnloadTexture(obstacle_texture);
     UnloadTexture(coin_texture);
     unload_sprite(ball_sprite);
 }
@@ -56,6 +58,7 @@ void load_sounds()
     coin_sound = LoadSound("data/sounds/coin.wav");
     apple_sound= LoadSound("data/sounds/apple.wav");
     paddle_sound= LoadSound("data/sounds/paddle.wav");
+
 }
 
 void unload_sounds()

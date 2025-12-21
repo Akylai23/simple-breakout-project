@@ -4,9 +4,9 @@
 #include "paddle.h"
 
 #include "raylib.h"
-
 #include <cmath>
 #include <numbers>
+
 
 void spawn_ball()
 {
@@ -41,8 +41,13 @@ void move_ball()
             ball_vel.y = -ball_vel.y;
             next_ball_pos.y = std::round(next_ball_pos.y);
         }
-
-    } else if (is_colliding_with_level_cell(next_ball_pos, ball_size, BLOCKS)) {
+// teleporting our ball
+    } else if(is_colliding_with_level_cell(next_ball_pos, ball_size, OBSTACLE)){
+        ball_pos.y=static_cast<float>(current_level.rows-2);
+        ball_vel.y=-std::abs(ball_vel.y);
+        return;
+    }
+    else if (is_colliding_with_level_cell(next_ball_pos, ball_size, BLOCKS)) {
         char& temp = get_colliding_level_cell(next_ball_pos, ball_size, BLOCKS);
 
         if (is_colliding_with_level_cell({ next_ball_pos.x, ball_pos.y }, ball_size, BLOCKS)) {

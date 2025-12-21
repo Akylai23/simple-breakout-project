@@ -5,6 +5,7 @@
 #include "level.h"
 #include "paddle.h"
 
+
 #include "raylib.h"
 
 void update()
@@ -35,8 +36,14 @@ void update()
             PlaySound(lose_sound);
             game_state=game_over_state;
         } else if (current_level_blocks == 0) {
-            load_level(1);
             PlaySound(win_sound);
+            if (current_level_index==level_count-1){
+                derive_graphics_metrics();
+                init_victory_menu();//animation of victory screen
+                game_state=victory_state;
+            }  else {
+                load_level(1); //back to 1st level
+            }
         }
         break;
 
@@ -49,7 +56,11 @@ void update()
 
         break;
     case victory_state:
+
         if (IsKeyPressed((KEY_ENTER))){
+            current_level_index=0;
+            load_level(0);
+
             game_state=in_game_state;
         }
         break;
@@ -92,6 +103,7 @@ void draw()
     case in_game_state:
 
         draw_level();
+
         draw_paddle();
         draw_ball();
         draw_ui();
@@ -120,6 +132,7 @@ int main()
     load_fonts();
     load_textures();
     load_level();
+
     load_sounds();
     load_music();
 
