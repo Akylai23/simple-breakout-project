@@ -147,6 +147,8 @@ void draw_ui()
         &menu_font
     };
     draw_text(boxes_remaining);
+
+
 }
 
 void draw_level()
@@ -172,6 +174,9 @@ void draw_level()
                 break;
             case OBSTACLE:
                 draw_image(obstacle_texture, texture_x_pos, texture_y_pos, cell_size);
+                break;
+            case BONUS:
+                draw_image(bonus_texture, texture_x_pos, texture_y_pos, cell_size);
                 break;
 
             default:;

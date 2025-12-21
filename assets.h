@@ -13,7 +13,7 @@ inline Texture2D paddle_texture;
 inline Texture2D block_texture;
 inline Texture2D coin_texture;
 inline Texture2D obstacle_texture;
-
+inline Texture2D bonus_texture;
 inline sprite ball_sprite;
 
 inline Sound win_sound;

@@ -8,6 +8,7 @@
 
 #include "raylib.h"
 
+
 void update()
 {
     // TODO
@@ -31,6 +32,7 @@ void update()
             move_paddle(paddle_speed);
         }
         move_ball();
+
         if (!is_ball_inside_level()) {
             load_level();
             PlaySound(lose_sound);

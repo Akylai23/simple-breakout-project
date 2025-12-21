@@ -42,6 +42,7 @@ void move_ball()
             next_ball_pos.y = std::round(next_ball_pos.y);
         }
 // teleporting our ball
+
     } else if(is_colliding_with_level_cell(next_ball_pos, ball_size, OBSTACLE)){
         ball_pos.y=static_cast<float>(current_level.rows-2);
         ball_vel.y=-std::abs(ball_vel.y);
@@ -71,7 +72,16 @@ void move_ball()
 
         PlaySound(coin_sound);
 
-    } else if (is_colliding_with_paddle(next_ball_pos, ball_size)) {
+    } // IF Ball collides with bonus, ball's speed gets slower
+    else if (is_colliding_with_level_cell(next_ball_pos, ball_size, BONUS)) {
+        char& temp = get_colliding_level_cell(next_ball_pos, ball_size, BONUS);
+        temp = VOID;
+        ball_vel.x *= 0.5f;
+        ball_vel.y*=0.5f;
+
+
+    }
+    else if (is_colliding_with_paddle(next_ball_pos, ball_size)) {
         ball_vel.y = -std::abs(ball_vel.y);
         PlaySound(paddle_sound);
     }
