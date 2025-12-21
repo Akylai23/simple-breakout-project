@@ -10,6 +10,7 @@ void load_fonts()
 {
     // new Font added.
     menu_font = LoadFontEx("data/fonts/orbitron.ttf", 256, nullptr, 0);
+    gameover_font= LoadFontEx("data/fonts/ARCADECLASSIC.TTF", 256, nullptr, 0);
 }
 
 void unload_fonts()

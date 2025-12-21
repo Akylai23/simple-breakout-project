@@ -103,13 +103,13 @@ void derive_graphics_metrics()
 
 void draw_menu()
 {
-    ClearBackground(BLACK);
+    ClearBackground({203, 227, 255});
 
     const Text game_title = {
         "Breakout",
         { 0.50f, 0.50f },
         200.0f,
-        RED,
+        DARKBLUE,
         4.0f,
         &menu_font
     };
@@ -119,7 +119,7 @@ void draw_menu()
         "Press Enter to Start",
         { 0.50f, 0.65f },
         32.0f,
-        WHITE,
+        BLACK,
         4.0f,
         &menu_font
     };
@@ -202,13 +202,13 @@ void draw_ball()
 
 void draw_pause_menu()
 {
-    ClearBackground(BLACK);
+    ClearBackground(WHITE);
 
     const Text paused_title = {
         "Press Escape to Resume",
         { 0.50f, 0.50f },
         32.0f,
-        WHITE,
+        DARKBLUE,
         4.0f,
         &menu_font
     };
@@ -278,48 +278,39 @@ void draw_victory_menu()
 void draw_gameover_menu() // Game Over Menu
 {
 
-    ClearBackground(SKYBLUE);
+    ClearBackground({5, 15, 45, 255});
 
     const Text title = {
         "GAME OVER!",
         { 0.50f, 0.40f },
         150.0f,
-        BLACK,
+        {240,214,45,255},
         4.0f,
-        &menu_font
-    };
-
-    const Text title2 = {
-        "GAME OVER!",
-        { 0.50f, 0.40f },
-        140.0f,
-        WHITE,
-        4.0f,
-        &menu_font
+        &gameover_font
     };
 
     const Text restart = {
         "Press ENTER to restart level",
         { 0.50f, 0.52f },
         50.0f,
-        ORANGE,
+        WHITE,
         4.0f,
-        &menu_font
+        &gameover_font
     };
 
     const Text menu = {
         "Press ESC to return to menu",
         { 0.50f, 0.60f },
         40.0f,
-        PINK,
+        WHITE,
         4.0f,
-        &menu_font
+        &gameover_font
     };
 
     draw_text(title);
     draw_text(restart);
     draw_text(menu);
-    draw_text(title2);
+
 }
 
 

@@ -12,6 +12,11 @@
 void update()
 {
     // TODO
+    // exit from the game
+    if (IsKeyPressed(KEY_DELETE) || IsKeyPressed(KEY_BACKSPACE)) {
+        CloseWindow();
+        return;
+    }
 
     switch (game_state ) {
     case menu_state:
@@ -32,7 +37,6 @@ void update()
             move_paddle(paddle_speed);
         }
         move_ball();
-
         if (!is_ball_inside_level()) {
             load_level();
             PlaySound(lose_sound);
