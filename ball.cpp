@@ -68,6 +68,7 @@ void move_ball()
 
     } else if (is_colliding_with_paddle(next_ball_pos, ball_size)) {
         ball_vel.y = -std::abs(ball_vel.y);
+        PlaySound(paddle_sound);
     }
 
     ball_pos = next_ball_pos;

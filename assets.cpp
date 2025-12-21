@@ -55,6 +55,7 @@ void load_sounds()
     lose_sound = LoadSound("data/sounds/lose.wav");
     coin_sound = LoadSound("data/sounds/coin.wav");
     apple_sound= LoadSound("data/sounds/apple.wav");
+    paddle_sound= LoadSound("data/sounds/paddle.wav");
 }
 
 void unload_sounds()
@@ -63,7 +64,7 @@ void unload_sounds()
     UnloadSound(lose_sound);
     UnloadSound(coin_sound);
     UnloadSound(apple_sound);
-
+    UnloadSound(paddle_sound);
     CloseAudioDevice();
 }
 

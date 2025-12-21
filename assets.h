@@ -20,6 +20,7 @@ inline Sound lose_sound;
 inline Sound coin_sound;
 inline Sound apple_sound;
 // new sound
+inline Sound paddle_sound;
 extern Music menu_music; // Menu Music
 void load_music();
 void unload_music();
