@@ -7,6 +7,8 @@
 
 inline Font menu_font;
 inline Font gameover_font;
+inline Font new_font;
+
 
 inline Texture2D wall_texture;
 inline Texture2D void_texture;

@@ -111,7 +111,7 @@ void draw_menu()
         200.0f,
         DARKBLUE,
         4.0f,
-        &menu_font
+        &new_font
     };
     draw_text(game_title);
 
@@ -121,7 +121,7 @@ void draw_menu()
         32.0f,
         BLACK,
         4.0f,
-        &menu_font
+        &new_font
     };
     draw_text(game_subtitle);
 }
@@ -175,7 +175,7 @@ void draw_level()
             case OBSTACLE:
                 draw_image(obstacle_texture, texture_x_pos, texture_y_pos, cell_size);
                 break;
-            case BONUS:
+            case SNOWFLAKE:
                 draw_image(bonus_texture, texture_x_pos, texture_y_pos, cell_size);
                 break;
 
@@ -202,16 +202,17 @@ void draw_ball()
 
 void draw_pause_menu()
 {
-    ClearBackground(WHITE);
+    ClearBackground(BEIGE);
 
     const Text paused_title = {
         "Press Escape to Resume",
         { 0.50f, 0.50f },
-        32.0f,
-        DARKBLUE,
+        60.0f,
+        DARKGREEN,
         4.0f,
-        &menu_font
+        &new_font
     };
+
     draw_text(paused_title);
 }
 
@@ -244,35 +245,37 @@ void animate_victory_menu()
 
 void draw_victory_menu()
 {
+    ClearBackground({255, 246, 170, 255});
     animate_victory_menu();
 
-    DrawRectangleV({ 0.0f, 0.0f }, { screen_size.x, screen_size.y }, { 0, 0, 0, 50 });
+    DrawRectangleV({ 0.0f, 0.0f },
+        { screen_size.x, screen_size.y },
+        { 0, 0, 0, 10})
+        ;
 
     for (const auto& [x, y] : victory_balls_pos) {
-        DrawCircleV({ x, y }, victory_balls_size, WHITE);
+        DrawCircleV({ x, y }, victory_balls_size, BLACK);
     }
 
     const Text victory_title = {
         "Victory!",
         { 0.50f, 0.50f },
-        100.0f,
-        RED,
+        200.0f,
+        DARKBLUE,
         4.0f,
-        &menu_font
+        &new_font
     };
     draw_text(victory_title);
 
     const Text victory_subtitle = {
         "Press Enter to Restart",
         { 0.50f, 0.65f },
-        32.0f,
+        60.0f,
         WHITE,
         4.0f,
         &menu_font
     };
     draw_text(victory_subtitle);
-
-
 }
 
 void draw_gameover_menu() // Game Over Menu

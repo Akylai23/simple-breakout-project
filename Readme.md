@@ -110,6 +110,36 @@ If you encounter any issues, double-check that the paths to the resource files a
 - Use compilation and linking errors to your advantage: _read_ them.
 - Use the debug tool to resolve crashes.
 
+## Project's details (Zh. Akylai)
+[!Breakout] [![Victory screen](https://i.postimg.cc/DyH71y98/Snimok-ekrana-2025-12-22-v-10-44-29.jpg)]
+(https://i.postimg.cc/DyH71y98/Snimok-ekrana-2025-12-22-v-10-44-29.jpg)
+
+* Game "Breakout" written by C++ language, using Raylib library. In this game, the player controls a paddle that keeps the ball within the level, which destroys blocks upon contact. The objective of the game is to navigate through a series of levels, cleaning all levels of blocks.
+* 1. COIN 
+* Coins have been added to the game. They can simply be collected. The number of collected coins is not counted, and their total amount does not affect further level progression. When the ball collides with a coin, it does not change its direction. The ball just collects the coin and continues moving in the same direction.
+* 2. SNOWFLAKE BONUS
+     The snowflake bonus is an element that appears on certain levels. When the ball touches the snowflake bonus, the ball’s movement speed is reduced by half. This helps the player control the paddle more easily and maintain better control of the ball.
+* 3. Obstacle — Christmas Tree
+This element is located in the corners of the game frame. When the ball collides with this obstacle, it is instantly teleported to the very bottom of the level and then moves upward again in the same direction. 
+* 
+* ADDED SOUNDS
+1. Coin Pick Up sound. 
+2. Paddle-touch sound. 
+3. 3.Appple collect sound.
+
+* Added BACKGROUND SOUND
+ * Menu_Screen now has background music.
+
+Added Screen:
+1. Menu_screen with option to start the game;
+2. Pause screen that allows to stop the game any time, and resume it by pressing key.'
+3. Game Over Screen. It appears when ball falls out of the game frame. It has options to restart current level or to switch to menu screen.
+4. Victory screen. Once person finishes all level, Victory screen congrats him and suggest to start again;
+5. Exit key_delete to exit game;
+
+Three levels with new elements.
+
+
 ## Deadline
 
 Refer to the specific course or assignment page on Moodle for detailed information about deadlines and the grading rubric.

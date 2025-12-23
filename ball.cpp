@@ -61,21 +61,21 @@ void move_ball()
         }
         PlaySound(apple_sound);
         //when apple is picked up, there is a sound now.
-
         temp = VOID;
         --current_level_blocks;
+
     } else if (is_colliding_with_level_cell(next_ball_pos, ball_size, COIN)) {
         char& temp = get_colliding_level_cell(next_ball_pos, ball_size, COIN);
 
         temp = VOID;
-        // coin dissapears.
+        // coin disappears.
 
         PlaySound(coin_sound);
 
-    } // IF Ball collides with bonus, ball's speed gets slower
-    else if (is_colliding_with_level_cell(next_ball_pos, ball_size, BONUS)) {
-        char& temp = get_colliding_level_cell(next_ball_pos, ball_size, BONUS);
-        temp = VOID;
+    } // IF Ball collides with bonus, ball's speed gets slower by 2x
+    else if (is_colliding_with_level_cell(next_ball_pos, ball_size,SNOWFLAKE )) {
+        char& temp = get_colliding_level_cell(next_ball_pos, ball_size, SNOWFLAKE);
+        temp = VOID; // snowflake disappears
         ball_vel.x *= 0.5f;
         ball_vel.y*=0.5f;
 

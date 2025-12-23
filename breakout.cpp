@@ -4,15 +4,13 @@
 #include "graphics.h"
 #include "level.h"
 #include "paddle.h"
-
-
 #include "raylib.h"
 
 
 void update()
 {
     // TODO
-    // exit from the game
+    // exit from the game and close the window.
     if (IsKeyPressed(KEY_DELETE) || IsKeyPressed(KEY_BACKSPACE)) {
         CloseWindow();
         return;
@@ -45,7 +43,8 @@ void update()
             PlaySound(win_sound);
             if (current_level_index==level_count-1){
                 derive_graphics_metrics();
-                init_victory_menu();//animation of victory screen
+                init_victory_menu();
+                //animation of victory screen
                 game_state=victory_state;
             }  else {
                 load_level(1); //back to 1st level
@@ -59,17 +58,16 @@ void update()
         if(IsKeyPressed((KEY_ESCAPE))){
             game_state=in_game_state;
         }
-
         break;
     case victory_state:
-
-        if (IsKeyPressed((KEY_ENTER))){
-            current_level_index=0;
+        draw_victory_menu();
+        if(IsKeyPressed(KEY_ENTER)){
+            current_level_index=0; // go to level 1.
             load_level(0);
-
-            game_state=in_game_state;
+            game_state = in_game_state;
         }
         break;
+
     case game_over_state: // when game over
         if(IsKeyPressed((KEY_ENTER))){ // try again
             load_level();
@@ -80,7 +78,7 @@ void update()
             load_level(0);
             game_state = menu_state;
 
-            PlayMusicStream(menu_music);     // Back to music, back to main.
+            PlayMusicStream(menu_music);     // Back to main, back to music.
             menu_music.looping = true;
             SetMusicVolume(menu_music, 0.4f);
 
@@ -120,6 +118,7 @@ void draw()
     case victory_state:
         draw_victory_menu();
         break;
+        // new game state.
     case game_over_state:
         draw_gameover_menu();
         break;
